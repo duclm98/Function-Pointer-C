@@ -129,6 +129,7 @@ int main()
     B(ptr);
 
     // Con trỏ 1 cấp (con trỏ trỏ tới giá trị kiểu int)
+    cout << "Con tro cap 1 (con tro tro toi gia tri kieu int)" << endl;
     int* a;
     int b = 10;
     a = &b;
@@ -136,6 +137,7 @@ int main()
     cout << **&a << "\t" << *&*a << "\t" << *a << "\t" << b << endl;
 
     // Con trỏ 2 cấp (con trỏ trỏ tới con trỏ trỏ tới giá trị kiểu int)
+    cout << "Con tro cap 3 (con tro tro toi con tro tro toi gia tri kieu int)" << endl;
     int** m;
     int* n;
     int q = 20;
@@ -143,6 +145,17 @@ int main()
     n = &q;
     cout << &**m << "\t" << **&m << "\t" << n << "\t" << &q << endl;
     cout << *&**m << "\t" << ***&m << "\t" << *n << "\t" << q << endl;
+
+    // Con tro cap 3 (Con tro tro toi con tro tro toi con tro tro toi gia tri kieu int)
+    cout << "Con tro cap 3 (Con tro tro toi con tro tro toi con tro tro toi gia tri kieu int)" << endl;
+    int*** x;
+    int** y;
+    int* z;
+    int t = 30;
+    x = &y;
+    y = &z;
+    z = &t;
+    cout << ***x;
 
     //
     /*int n;
