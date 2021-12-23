@@ -1,4 +1,4 @@
-#include <iostream>
+﻿#include <iostream>
 #include <stdio.h>
 using namespace std;
 
@@ -128,10 +128,21 @@ int main()
     void (*ptr)() = &A;
     B(ptr);
 
+    // Con trỏ 1 cấp (con trỏ trỏ tới giá trị kiểu int)
     int* a;
     int b = 10;
     a = &b;
-    cout << *&a << "\t" << a << endl;
+    cout << *&a << "\t" << &*a << "\t" << a << "\t" << &b << endl;
+    cout << **&a << "\t" << *&*a << "\t" << *a << "\t" << b << endl;
+
+    // Con trỏ 2 cấp (con trỏ trỏ tới con trỏ trỏ tới giá trị kiểu int)
+    int** m;
+    int* n;
+    int q = 20;
+    m = &n;
+    n = &q;
+    cout << &**m << "\t" << **&m << "\t" << n << "\t" << &q << endl;
+    cout << *&**m << "\t" << ***&m << "\t" << *n << "\t" << q << endl;
 
     //
     /*int n;
